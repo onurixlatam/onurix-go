@@ -9,24 +9,31 @@ import (
 
 func main() {
 
-	headers := map[string][]string{
-		"Content-Type": []string{"application/x-www-form-urlencoded"},
-		"Accept":       []string{"application/json"},
-	}
+	url := "https://www.onurix.com/api/v1/whatsapp/send?key=AQUI_SU_KEY&client=AQUI_SU_CLIENT&template=AQUI_EL_NOMBRE_DE_LA_PLANTILLA"
+	method := "POST"
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&template=AQUI_EL_NOMBRE_DE_LA_PLANTILLA&content=AQUI_EL_JSON_CON_LOS_VALORES_PARA_LA_PLANTILLA")
-	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/whatsapp/send", data)
-	req.Header = headers
+	payload := strings.NewReader(`AQUI_EL_JSON_CON_LOS_VALORES_PARA_LA_PLANTILLA`)
 
 	client := &http.Client{}
-	resp, err := client.Do(req)
+	req, err := http.NewRequest(method, url, payload)
 
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	req.Header.Add("Content-Type", "text/plain")
+
+	res, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Println(string(body))
-
 }
