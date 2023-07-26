@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strings"
 )
 
 func main() {
@@ -14,8 +13,7 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&app-name=AQUI_NOMBRE_APP")
-	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/whatsapp/2fa/send", data)
+	req, err := http.NewRequest("DELETE", "https://www.onurix.com/api/v1/group/delete?key=AQUI_SU_KEY&client=AQUI_SU_ID&id=AQUI_ID_GROUP", nil)
 	req.Header = headers
 
 	client := &http.Client{}

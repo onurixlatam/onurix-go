@@ -14,7 +14,7 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&app-name=AQUI_NOMBRE_APP&code=AQUI_CODIGO&country-code=CO")
+	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&app-name=AQUI_NOMBRE_APP&code=AQUI_CODIGO")
 	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/2fa/verification-code", data)
 	req.Header = headers
 
