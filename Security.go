@@ -14,7 +14,7 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&name=AQUI_NOMBRE_CONTACTO")
+	data := strings.NewReader("client=3&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&name=&channel=AQUI_CANAL_A_BLOQUEAR")
 	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/block-phone", data)
 	req.Header = headers
 

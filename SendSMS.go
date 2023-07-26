@@ -14,8 +14,8 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&sms=AQUI_EL_SMS_A_ENVIAR&country-code=CO")
-	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/send-sms", data)
+	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&sms=AQUI_EL_SMS_A_ENVIAR&groups=AQUI_ID_GRUPOS")
+	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/sms/send", data)
 	req.Header = headers
 
 	client := &http.Client{}

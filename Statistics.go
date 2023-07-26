@@ -14,7 +14,7 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&phone=AQUI_EL_NUMERO_DE_CELULAR&name-url=AQUI_NOMBRE_DE_URL&since=Fecha inicial YYYY-MM-DD&until=Fecha final YYYY-MM-DD")
+	data := strings.NewReader("client=AQUI_SU_CLIENT&key=AQUI_SU_KEY&name-url=AQUI_NOMBRE_DE_URL&since=Fecha inicial YYYY-MM-DD&until=Fecha final YYYY-MM-DD")
 	req, err := http.NewRequest("POST", "https://www.onurix.com/api/v1/url/short-statistic", data)
 	req.Header = headers
 
