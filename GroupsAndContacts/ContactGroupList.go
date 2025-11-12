@@ -13,7 +13,7 @@ func main() {
 		"Accept":       []string{"application/json"},
 	}
 
-	req, err := http.NewRequest("GET", "https://www.onurix.com/api/v1/group/AQUI_ID_GRUPO/contacts/list?key=AQUI_SU_KEY&client=AQUI_SU_CLIENT", nil)
+	req, err := http.NewRequest("GET", "https://www.onurix.com/api/v1/group/AQUI_ID_GRUPO/contacts/list?key=AQUI_SU_KEY&client=AQUI_SU_CLIENT&page=AQUI_NUMERO_PAGINA", nil)
 	req.Header = headers
 
 	client := &http.Client{}
