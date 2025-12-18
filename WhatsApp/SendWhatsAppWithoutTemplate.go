@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	url := "https://www.onurix.com/api/v1/whatsapp/send/no-template?key=AQUI_SU_SECRET_KEY&client=AQUI_SU_CLIENT_ID"
+	url := "https://www.onurix.com/api/v1/whatsapp/send/no-template?key=AQUI_SU_SECRET_KEY&client=AQUI_SU_CLIENT_ID&phone_sender_id=AQUI_EL_ID_DEL_NUMERO_DE_TELEFONO_REMITENTE"
 	method := "POST"
 
 	payload := strings.NewReader(`{
