@@ -136,6 +136,7 @@ Para usar los ejemplos, necesitas reemplazar los valores de los placeholders (`A
 | Servicio     | Parámetro            | Descripción                                                                              |
 | :----------- | :------------------- | :--------------------------------------------------------------------------------------- |
 | **SMS**      | `sms`                | Contenido del mensaje de texto a enviar.                                                 |
+| **SMS**      | `is-transactional`   | (Opcional) `1` (por defecto): mensaje transaccional. `0`: mensaje comercial; los números inscritos en el Registro de Números Excluidos (RNE) que no aceptan SMS se rechazan con el error `1010`. |
 | **Llamadas** | `message`            | Mensaje que se reproducirá en la llamada.                                                |
 | **Llamadas** | `voice`              | Voz a usar en la llamada (ej. `Mariana`, `Penelope`).                                    |
 | **Llamadas** | `audio-code`         | ID de un audio previamente cargado en la plataforma.                                     |
@@ -156,6 +157,7 @@ Para usar los ejemplos, necesitas reemplazar los valores de los placeholders (`A
 	data.Set("phone", "573001234567")
 	data.Set("sms", "Este es un mensaje de prueba enviado desde Onurix.com")
 	data.Set("groups", "1,2,3")
+	data.Set("is-transactional", "1") // 0 si el mensaje es comercial
 ```
 
 **Ejemplo de `data` para WhatsApp:**
